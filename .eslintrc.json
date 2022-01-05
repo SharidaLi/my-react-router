@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/demos /**/*"
+      ],
+      "rules": {
+        "react/react-in-jsx-scope": "off",
+        "react/display-name": "off"
+      }
+    }
+  ],
+  "rules": {
+    "react/display-name": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
