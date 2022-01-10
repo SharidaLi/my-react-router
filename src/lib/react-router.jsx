@@ -34,13 +34,12 @@ function compilePath(path) {
   const paramNames = [];
   let regexpSource =
     '^' +
-    path.replace(/:(\W+)/g, (_, paramName) => {
+    path.replace(/:(\w+)/g, (_, paramName) => {
       paramNames.push(paramName);
       return '([^\\/]+)';
     }) +
     '$';
   const matcher = new RegExp(regexpSource);
-  console.log(paramNames);
   return [matcher, paramNames];
 }
 
@@ -66,8 +65,7 @@ function useRoutes(routes) {
     const match = matchPath(path, pathname);
     if (match) {
       return element;
-    } else {
-      return null;
     }
   }
+  return null;
 }
